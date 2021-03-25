@@ -20,8 +20,10 @@
         //In this code will be using the event listener with a callback
         //Implement the following
         // 1. Get the button by its ID
+        var btn = document.getElementById("submitBtn");
         // 2. Assign it to a variable
         // 3. Add an event listener to the button element that when the button
         //    is clicked, a callback will call an alert message that will say "Clicked Me"
+        btn.addEventListener("click", function() {alert("Clicked Me")});
     </script>
 </html>

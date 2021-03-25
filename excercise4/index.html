@@ -28,11 +28,27 @@
         //
         //Implement the following:
         // 1. Get the two buttons by their ids and assign to variables
+        btnStart = document.getElementById("startBtn");
+        btnStop = document.getElementById("stopBtn");
         // 2. When the start buton is click, on the event listener of start button have it
         //    print alert the message "Running Loop" every 5 seconds using setInterval. Remember to save
         //    the id that is returned when setInterval is called
+        var myVar;
+        var isRunning = false;
+        function start () {
+            if(!isRunning){
+                myVar = setInterval(function(){ alert("Running Loop"); }, 5000);
+                isRunning = true;
+            }
+        }
+        function stop () {
+            clearInterval(myVar);
+            isRunning = false;
+        }
+        btnStart.addEventListener("click", start);
         // 3. When the stop button is clicked, on the event listener of stop button, have the
         //    interval stop using clearInterval
+        btnStop.addEventListener("click", stop);
         // BONUS
         // Add a check where if the interval is already running, it doesn't create a new
         // interval

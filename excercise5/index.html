@@ -25,11 +25,23 @@
         //
         //Implement the following:
         //1. Get the button by its id and assign to a variable
+        btn = document.getElementById("populateBtn");
         //2. When the button is clicked, iterate through the items array below
         //   using the forEach method
+        ul = document.getElementById("content");
+        
+        btn.addEventListener("click", function(){
+            items.forEach(arrayItem => insertArrayItem(arrayItem));
+        });
+        function insertArrayItem(arrayItem) {
+            let newElement = document.createElement("li");
+
+            newElement.innerHTML = arrayItem;
+
+            ul.appendChild(newElement);
+        }
         //3. Create a new li element with the items name as the content
         //4. Append the new li element to the ul list in the html
-
         var items = ["Apple", "Orange", "Blueberries", "Banaana"];
         
     </script>
